@@ -1,0 +1,30 @@
+# Server Port
+server:
+  port: 8888
+
+# Actuator Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [health, beans, env, mappings]
+
+# Multiply Data Source
+mongodb:
+  primary:
+    host: 127.0.0.1
+    port: 27017
+    database: primary
+  secondary:
+    host: 127.0.0.1
+    port: 27017
+    database: secondary
+spring:
+  application:
+    name: mongo-multi-data-source
+  # spring-cloud-alibaba-sentinel
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+
