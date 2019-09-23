@@ -11,6 +11,10 @@ management:
 
 # Multiply Data Source
 mongodb:
+  connectionsPerHost: 8
+  connectTimeout: 150000
+  socketTimeout: 150000
+  threadsAllowedToBlockForConnectionMultiplier: 4
   primary:
     host: 127.0.0.1
     port: 27017
@@ -19,12 +23,10 @@ mongodb:
     host: 127.0.0.1
     port: 27017
     database: secondary
-spring:
-  application:
-    name: mongo-multi-data-source
-  # spring-cloud-alibaba-sentinel
-  cloud:
-    sentinel:
-      transport:
-        dashboard: localhost:8080
+# spring-cloud-alibaba-sentinel
+#spring:
+#  cloud:
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
 

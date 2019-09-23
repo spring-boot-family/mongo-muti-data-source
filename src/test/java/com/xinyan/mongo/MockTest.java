@@ -1,6 +1,6 @@
 package com.xinyan.mongo;
 
-import com.xinyan.mongo.controller.HelloController;
+import com.xinyan.mongo.controller.MongoController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ public class MockTest {
 
     @Before
     public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+        mvc = MockMvcBuilders.standaloneSetup(new MongoController()).build();
     }
 
     @Test
